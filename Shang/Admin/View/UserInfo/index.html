@@ -1,0 +1,51 @@
+<include file='Public/header'/>
+<include file='Public/left'/>
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:U('Index/index')}">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">作品管理</span></div>
+        </div>
+    
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                      <a href="{:U('UserInfo/xls')}"><i class="icon-font"></i>导出表格</a>
+                                    <!--     <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a> --> 
+                                        </div> 
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr >
+                            <th class="tc" width="5%" style="text-align:center"><input class="allChoose" name="" type="checkbox"></th>
+                            <th style="text-align:center">ID</th>
+                            <th style="text-align:center">用户名</th>
+                            <th style="text-align:center">电话号码</th>
+                            <th style="text-align:center">省份</th>
+                            <th style="text-align:center">城市</th>
+                        </tr>
+                     <volist name="data"  id="vo">
+                        <tr>
+                            <td class="tc"><input name="id[]" value="58" type="checkbox"></td>
+                     		 <td style="text-align:center">{$vo.id}</td>
+                     		 <td style="text-align:center">{$vo.username}</td>
+                                        <td style="text-align:center">{$vo.telephone}</td>
+                                        <td style="text-align:center">{$vo.province}</td>
+                                        <td style="text-align:center">{$vo.city}</td>
+                          <!--   <td style="text-align:center">
+                              <a class="link-update" href="{:U('Admin/User/edit/id/'.$vo['id'])}">修改</a>
+                              <a class="link-del"  href="{:U('Admin/User/dele/id/'.$vo['id'])}"  onclick="return confirm('确认删除')"  >删除</a>
+                          </td> -->
+                        </tr>
+                        </volist>
+                    </table>
+                    <div class="list-page"> {$page}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
